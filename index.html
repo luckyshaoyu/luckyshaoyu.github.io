@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>JS+CSS实现的红色横向二级菜单_网页代码站(www.webdm.cn)</title>
+<style>
+body {font-family:\5B8B\4F53,Arial Narrow,arial,serif;background:#ffffff;font-size:12px;}
+body,div,dl,dt,dd,ul,ol,li,pre,form,fieldset,input,textarea,blockquote,emBED{padding:0; margin:0;}
+li{list-style-type:none;}
+a{text-decoration:none;color:#333;}
+a:hover{text-decoration:underline;}
+#nav{ background:url('/images/20150503/nav_li_bg.gif') repeat-x top; height:37px; position:relative;width:988px; margin:20px auto;}
+#nav .l{ background:url('/images/20150503/nav_li_left.gif') no-repeat top; height:37px;width:78px; float:left}
+#nav .r{width:82px;background:url('/images/20150503/nav_li_rights.gif') no-repeat right top;height:37px;float:left;}
+#nav li { float:left;}
+#nav li .v a{ width:138px;height:37px; line-height:32px; display:block; color:#FFF;float:left;font-weight:bold;text-decoration:none;text-align:center;}
+#nav li .v a:hover,#nav li .v .sele{width:138px;background:url('/images/20150503/nav_li_hover.gif') no-repeat top;color:#fff;height:37px;line-height:37px;color:#d11515;}
+.kind_menu { height:30px;line-height:30px;vertical-align:middle; position:absolute;top:37px;left:0;text-align:left; display:none;color:#333;font-size:12px;}
+.kind_menu a {color:#333; background:url('/images/20150503/sub_dot.gif') no-repeat left 14px;float:left; text-align:center;padding:0 10px;font-size:12px;text-decoration:none;}
+.kind_menu a:hover {color:#000;text-decoration:none;}
+#Layer1{width:400px;left:60px;}
+#Layer2{width:400px;left:200px;}
+#Layer3{width:500px;left:300px;}
+#Layer4{width:400px;left:400px;}
+#Layer5{width:400px;left:auto;right:120px;}
+#Layer6{width:560px;left:auto;right:60px;}
+</style>
+<SCRIPT src="/themes/script/jquery.js" type="text/javascript"></SCRIPT>
+</head>
+<body>
+<DIV id=nav>
+<DIV class=l></DIV>
+<UL class=c>
+  <LI><SPAN class=v><A href="#" target="_blank">网站首页</A></SPAN>
+  <DIV class=kind_menu id="Layer1">欢迎访问,我们为您提供最优质的网络营销服务! </DIV></LI>
+  <LI><SPAN class=v><A href="#">网页代码站</A></SPAN>
+  <DIV class=kind_menu  id="Layer2">
+  <A href="#">电信特惠套餐</A>
+  <A href="#">智能双线套餐</A> </DIV></LI>
+  <LI><SPAN class=v><A href="#">导航条</A></SPAN>
+  <DIV class=kind_menu id="Layer3">
+  <A href="#">英文域名</A>
+  <A href="#">中文域名</A>
+  <A href="#">通用网址</A>
+  <A href="#">源码下载</A>
+  <A href="#">域名交易</A>
+  <A href="#">域名帮助</A>
+  <A href="#">智能加速</A> </DIV></LI>
+  <LI><SPAN class=v><A href="#">电子商务</A></SPAN>
+  <DIV class=kind_menu id="Layer4">
+  <A href="#">网络营销</A>
+  <A href="#">源码下载</A>
+  <A href="#">网络营销</A>
+  <A href="#">网页特效</A> </DIV></LI>
+  <LI><SPAN class=v><A href="#">网络营销</A></SPAN>
+  <DIV class=kind_menu id="Layer5">
+  <A href="#">网络营销</A>
+  <A href="#">网络营销</A>
+  <A href="#">网络营销</A>
+  <A href="#">网页特效代码</A> </DIV></LI>
+  <LI><SPAN class=v><A href="#">关于我们</A></SPAN>
+  <DIV class=kind_menu id="Layer6">
+  <A href="#">网络营销</A>
+  <A href="#">源码下载</A>
+  <A href="#">网络营销</A>
+  <A href="#">网页特效</A> </DIV></LI>
+  </UL>
+ <DIV class=r></DIV>
+</DIV><!--nav-->
+<SCRIPT type="text/javascript">
+var site_url = window.location.href.toLowerCase();
+switch (true) {
+	default :
+		$("#nav li").attr("class","");
+		$("#nav li").eq(0).attr("class","nav_lishw");
+		$(".nav_lishw .v a").attr("class","sele");
+		$(".nav_lishw .kind_menu").show();
+}
+$("#nav li").hover(
+function(){
+		clearTimeout(setTimeout("0")-1);
+		$("#nav .kind_menu").hide();
+		$("#nav li .v .sele").attr("class","shutAhover");
+		$(this).attr("id","nav_hover")
+		$("#nav_hover .v a").attr("class","sele");
+		$("#nav_hover .kind_menu").show();
+	},
+function(){
+	if($(this).attr("class") != "nav_lishw"){
+			$("#nav_hover .v .sele").attr("class","");
+			$("#nav_hover .kind_menu").hide();
+		}
+		$(this).attr("id","")
+		$("#nav li .v .shutAhover").attr("class","sele");
+		setTimeout(function(){
+			$(".nav_lishw .kind_menu").show();
+			$(".nav_lishw .v a").attr("class","sele");
+		},50);
+	}
+);
+</SCRIPT>
+<br>
+<p><a href="http://www.webdm.cn">网页代码站</a> - 最专业的网页代码下载网站 - 致力为中国站长提供有质量的网页代码！</p>
+</body>
+</html>
